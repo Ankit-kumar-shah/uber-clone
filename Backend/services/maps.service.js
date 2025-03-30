@@ -1,7 +1,7 @@
 const axios = require('axios');
 const captainModel = require('../models/captain.model');
 
-const API_KEY = 'AlzaSyBOhqblTXXVnD1cwkqChNQtbxtROJWD65F'
+const API_KEY = 'AIzaSyCY1a3uJVVDS3KpErqptDSXYJl3hhOWDzA'
 const BASE_URL = 'https://addressvalidation.gomaps.pro/v1:validateAddress';
 
 /**
@@ -13,7 +13,7 @@ module.exports.getAddressCoordinate = async (address, regionCode = "IN") => {
     }
 
     try {
-        const response = await axios.post(`${BASE_URL}?key=${API_KEY}`, {
+        const response = await axios.post(`${`http://localhost:5173`}?key=${`AIzaSyCY1a3uJVVDS3KpErqptDSXYJl3hhOWDzA`}`, {
             address: { regionCode, addressLines: [address] }
         }, { headers: { 'Content-Type': 'application/json' } });
 
